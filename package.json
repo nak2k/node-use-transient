@@ -53,5 +53,8 @@
   "files": [
     "README.md",
     "lib/"
-  ]
+  ],
+  "dependencies": {
+    "react-use-polyfill": "^0.1.0"
+  }
 }
