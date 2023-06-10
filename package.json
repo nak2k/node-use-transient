@@ -41,18 +41,6 @@
     "postpublish": "npm-sns",
     "test": "jest"
   },
-  "jest": {
-    "transform": {
-      ".(ts|tsx)": "ts-jest"
-    },
-    "testRegex": "test/.*\\.(ts|tsx)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
-    "testEnvironment": "jsdom"
-  },
   "files": [
     "README.md",
     "lib/"
