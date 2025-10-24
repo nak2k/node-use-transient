@@ -1,5 +1,4 @@
-import React, { ReactNode, Suspense, SuspenseProps } from 'react';
-import { use } from "react-use-polyfill";
+import { ReactNode, Suspense, SuspenseProps, use } from 'react';
 
 interface RenderProps<T> {
   /**

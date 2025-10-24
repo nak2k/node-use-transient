@@ -1,13 +1,15 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, act, waitFor } from '@testing-library/react';
 import { Wait } from '../src';
 
 test('test', async () => {
-  const promise = Promise.resolve("Resolved");
+  let resolve: (value: string) => void;
+  const promise = new Promise<string>(r => { resolve = r; });
 
-  render(<Wait promise={promise} transient="Transient" render={value =>
-    <div>{value}</div>
-  } fallback={null} />);
+  await act(async () => {
+    render(<Wait promise={promise} transient="Transient" render={value =>
+      <div>{value}</div>
+    } fallback={null} />);
+  });
 
   expect(screen.getByText("Transient")).toMatchInlineSnapshot(`
 <div>
@@ -15,9 +17,15 @@ test('test', async () => {
 </div>
 `);
 
-  expect(await screen.findByText("Resolved")).toMatchInlineSnapshot(`
+  await act(async () => {
+    resolve!("Resolved");
+  });
+
+  await waitFor(() => {
+    expect(screen.getByText("Resolved")).toMatchInlineSnapshot(`
 <div>
   Resolved
 </div>
 `);
+  });
 });
