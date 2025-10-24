@@ -1,6 +1,6 @@
 {
   "name": "use-transient",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Hook and component to render transient values",
   "type": "module",
   "author": "Kengo Nakatsuka <kengo.nakatsuka@gmail.com>",
