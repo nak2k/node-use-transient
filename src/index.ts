@@ -1,2 +1,2 @@
-export { Wait, WaitProps } from "./Wait";
-export { useTransient } from "./useTransient";
+export { Wait, WaitProps } from "./Wait.js";
+export { useTransient } from "./useTransient.js";

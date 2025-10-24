@@ -1,5 +1,5 @@
 import { DependencyList, useReducer } from "react";
-import { areEqual } from "./areEqual";
+import { areEqual } from "./areEqual.js";
 
 interface TransientState<T> {
   deps: DependencyList;

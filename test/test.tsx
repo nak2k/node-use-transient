@@ -1,5 +1,5 @@
 import { render, screen, act, waitFor } from '@testing-library/react';
-import { Wait } from '../src';
+import { Wait } from '../src/index.js';
 
 test('test', async () => {
   let resolve: (value: string) => void;

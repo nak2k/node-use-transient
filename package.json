@@ -2,6 +2,7 @@
   "name": "use-transient",
   "version": "0.1.2",
   "description": "Hook and component to render transient values",
+  "type": "module",
   "author": "Kengo Nakatsuka <kengo.nakatsuka@gmail.com>",
   "bugs": {
     "url": "https://github.com/nak2k/node-use-transient/issues"
@@ -27,17 +28,25 @@
     "react"
   ],
   "license": "MIT",
-  "main": "lib",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nak2k/node-use-transient.git"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -p tsconfig.build.json",
     "clean": "rimraf lib",
     "prepublishOnly": "run-s clean build test",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "typecheck": "tsc -p tsconfig.test.json"
   },
   "files": [
     "README.md",
