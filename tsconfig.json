@@ -23,11 +23,13 @@
     "experimentalDecorators": false,
     "strictPropertyInitialization": false,
     "typeRoots": [
-      "./node_modules/@types"
+      "./node_modules/@types",
+      "./node_modules"
     ],
-    "types": ["jest", "node"],
+    "types": ["node", "vitest/globals"],
     "allowSyntheticDefaultImports": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "skipLibCheck": true
   },
   "include": [
     "src/**/*.ts",
